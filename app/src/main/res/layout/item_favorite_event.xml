@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:padding="6dp"
+    android:layout_margin="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivEventImage"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:contentDescription="Event Image"
+            android:layout_marginEnd="8dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.MediumComponent"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Event"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi singkat tentang event ini..."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"/>
+
+            <!-- Lokasi & Waktu -->
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📍 Online | 🕒 14 Maret 2025, 16:00 WIB"
+                android:textSize="12sp"
+                android:textColor="@android:color/black"
+                android:maxLines="1"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

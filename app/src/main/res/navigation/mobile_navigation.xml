@@ -1,0 +1,61 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_upcoming"
+    tools:ignore="InvalidNavigation">
+
+    <fragment
+        android:id="@+id/navigation_upcoming"
+        android:name="com.example.myapppavor.ui.upcoming.UpComingEventFragment"
+        tools:layout="@layout/fragment_upcoming" />
+
+    <fragment
+        android:id="@+id/navigation_finished"
+        android:name="com.example.myapppavor.ui.finished.FinishedEventFragment"
+        tools:layout="@layout/fragment_finished_event" />
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.example.myapppavor.ui.favorite.FavoriteEventFragment"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_navigation_favorite_to_detailEventFragment"
+            app:destination="@id/detailEventFragment">
+            <argument
+                android:name="eventId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.myapppavor.ui.setting.SettingFragment"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/detailEventFragment"
+        android:name="com.example.myapppavor.ui.detailEvent.DetailEventFragment"
+        tools:layout="@layout/fragment_detail_event">
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
