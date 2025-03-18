@@ -15,10 +15,17 @@
         android:text="Favorite Event"
         android:textSize="24sp"
         android:textStyle="bold"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
+=======
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
     <TextView
         android:id="@+id/tvSubtitle"
@@ -27,10 +34,18 @@
         android:text="Recommendation event for you!"
         android:textColor="@android:color/darker_gray"
         android:textSize="16sp"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         tools:ignore="HardcodedText" />
+=======
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
@@ -54,6 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/tvEmptyList"
         android:layout_width="wrap_content"
@@ -67,5 +83,11 @@
         app:layout_constraintTop_toBottomOf="@id/searchView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.5"/>
+=======
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
 </androidx.constraintlayout.widget.ConstraintLayout>

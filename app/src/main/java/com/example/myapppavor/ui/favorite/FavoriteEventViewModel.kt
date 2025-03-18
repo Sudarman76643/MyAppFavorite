@@ -15,11 +15,14 @@ class FavoriteEventViewModel(application: Application) : AndroidViewModel(applic
     private val _favoriteEvents = MutableLiveData<List<FavoriteEvent>>()  // LiveData yang bisa diubah
     val favoriteEvents: LiveData<List<FavoriteEvent>> get() = _favoriteEvents
 
+<<<<<<< HEAD
 
     fun deleteFavorite(event: FavoriteEvent) {
         _favoriteEvents.value = _favoriteEvents.value?.filter { it.id != event.id }
     }
 
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
     init {
         val dao = FavoriteEventDatabase.getDatabase(application).favoriteEventDao()
         val apiService = FavoriteConfig.instance

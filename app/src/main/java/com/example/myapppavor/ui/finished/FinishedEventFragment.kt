@@ -13,6 +13,10 @@ import com.example.myapppavor.databinding.FragmentFinishedEventBinding
 import com.example.myapppavor.ui.adapter.FinishedEventAdapter
 
 class FinishedEventFragment : Fragment() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
     private var _binding: FragmentFinishedEventBinding? = null
     private val binding get() = _binding!!
     private val viewModel: FinishedEventViewModel by viewModels()
@@ -29,6 +33,7 @@ class FinishedEventFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+<<<<<<< HEAD
         adapter = FinishedEventAdapter(
             onItemClick = { event ->
                 Toast.makeText(requireContext(), "Clicked: ${event.name}", Toast.LENGTH_SHORT).show()
@@ -43,6 +48,11 @@ class FinishedEventFragment : Fragment() {
                 }
             }
         )
+=======
+        adapter = FinishedEventAdapter { event ->
+            Toast.makeText(requireContext(), "Clicked: ${event.name}", Toast.LENGTH_SHORT).show()
+        }
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
         binding.rvFinishedEvents.layoutManager = LinearLayoutManager(requireContext())
         binding.rvFinishedEvents.adapter = adapter

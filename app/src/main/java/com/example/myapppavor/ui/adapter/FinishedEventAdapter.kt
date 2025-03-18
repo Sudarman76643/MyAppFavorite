@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+<<<<<<< HEAD
 import com.example.myapppavor.R
 import com.example.myapppavor.databinding.ItemFinishedEventBinding
 import com.example.myapppavor.remote.response.ListEventsItem
@@ -13,6 +14,13 @@ class FinishedEventAdapter(
     private val onItemClick: (ListEventsItem) -> Unit,
     private val onFavoriteClick: (ListEventsItem, Boolean) -> Unit // Tambah callback untuk favorite
 ) : RecyclerView.Adapter<FinishedEventAdapter.FinishedEventViewHolder>() {
+=======
+import com.example.myapppavor.databinding.ItemFinishedEventBinding
+import com.example.myapppavor.remote.response.ListEventsItem
+
+class FinishedEventAdapter(private val onItemClick: (ListEventsItem) -> Unit) :
+    RecyclerView.Adapter<FinishedEventAdapter.FinishedEventViewHolder>() {
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
     private val eventList = mutableListOf<ListEventsItem>()
 
@@ -40,8 +48,11 @@ class FinishedEventAdapter(
     inner class FinishedEventViewHolder(private val binding: ItemFinishedEventBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+<<<<<<< HEAD
         private var isFavorite = false
 
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
         fun bind(event: ListEventsItem) {
             binding.tvEventTitle.text = event.name
             binding.tvEventDate.text = "📅 ${event.beginTime} - ${event.endTime}"
@@ -55,6 +66,7 @@ class FinishedEventAdapter(
             binding.root.setOnClickListener {
                 onItemClick(event)
             }
+<<<<<<< HEAD
 
             // Atur default icon ke abu-abu
             binding.ivFavorite.setImageResource(R.drawable.love_pecah)
@@ -71,6 +83,8 @@ class FinishedEventAdapter(
                 }
                 onFavoriteClick(event, isFavorite) // Kirim event dan status favorite
             }
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
         }
     }
 }

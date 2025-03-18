@@ -5,7 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+<<<<<<< HEAD
 import androidx.core.content.ContextCompat
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -13,10 +16,15 @@ import com.bumptech.glide.Glide
 import com.example.myapppavor.R
 import com.example.myapppavor.entity.FavoriteEvent
 
+<<<<<<< HEAD
 class FavoriteEventAdapter(
     private val onClick: (FavoriteEvent) -> Unit,
     private val onRemoveFavorite: (FavoriteEvent) -> Unit
 ) : ListAdapter<FavoriteEvent, FavoriteEventAdapter.FavoriteEventViewHolder>(DIFF_CALLBACK) {
+=======
+class FavoriteEventAdapter(private val onClick: (FavoriteEvent) -> Unit) :
+    ListAdapter<FavoriteEvent, FavoriteEventAdapter.FavoriteEventViewHolder>(DIFF_CALLBACK) {
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteEventViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -30,20 +38,30 @@ class FavoriteEventAdapter(
         holder.itemView.setOnClickListener { onClick(event) }
     }
 
+<<<<<<< HEAD
     inner class FavoriteEventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val title: TextView = itemView.findViewById(R.id.tvTitle)
         private val description: TextView = itemView.findViewById(R.id.tvDescription)
         private val image: ImageView = itemView.findViewById(R.id.ivEventImage)
         private val ivFavorite: ImageView = itemView.findViewById(R.id.ivFavorite)
+=======
+    class FavoriteEventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val title: TextView = itemView.findViewById(R.id.tvTitle)
+        private val description: TextView = itemView.findViewById(R.id.tvDescription)
+        private val image: ImageView = itemView.findViewById(R.id.ivEventImage)
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
         fun bind(event: FavoriteEvent) {
             title.text = event.title
             description.text = event.description
             Glide.with(itemView.context).load(event.imageUrl).into(image)
+<<<<<<< HEAD
 
             ivFavorite.setOnClickListener {
                 onRemoveFavorite(event)
             }
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
         }
     }
 
@@ -59,4 +77,7 @@ class FavoriteEventAdapter(
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f

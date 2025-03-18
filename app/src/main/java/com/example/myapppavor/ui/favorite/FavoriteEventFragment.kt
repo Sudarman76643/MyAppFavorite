@@ -1,7 +1,10 @@
 package com.example.myapppavor.ui.favorite
 
 import android.os.Bundle
+<<<<<<< HEAD
 import android.util.Log
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +25,11 @@ class FavoriteEventFragment : Fragment() {
 
     private val viewModel: FavoriteEventViewModel by viewModels()
     private lateinit var adapter: FavoriteEventAdapter
+<<<<<<< HEAD
     private var allEvents: List<FavoriteEvent> = listOf()
+=======
+    private var allEvents: List<FavoriteEvent> = listOf() // Store the original list of events
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +42,21 @@ class FavoriteEventFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+<<<<<<< HEAD
         adapter = FavoriteEventAdapter(
             onClick = { event -> navigateToDetail(event) },
             onRemoveFavorite = { event -> removeFromFavorites(event) }
         )
+=======
+        adapter = FavoriteEventAdapter { event ->
+            navigateToDetail(event)
+        }
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
         binding.rvFavoriteEvents.layoutManager = LinearLayoutManager(requireContext())
         binding.rvFavoriteEvents.adapter = adapter
 
+<<<<<<< HEAD
 
         viewModel.favoriteEvents.observe(viewLifecycleOwner) { events ->
             allEvents = events
@@ -52,6 +66,16 @@ class FavoriteEventFragment : Fragment() {
 
         // Set up SearchView
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+=======
+        viewModel.favoriteEvents.observe(viewLifecycleOwner) { events: List<FavoriteEvent> ->
+            allEvents = events // Store all events to use later for searching
+            adapter.submitList(events)
+        }
+
+        // Set up SearchView
+        val searchView: SearchView = binding.searchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
@@ -63,6 +87,7 @@ class FavoriteEventFragment : Fragment() {
         })
     }
 
+<<<<<<< HEAD
     private fun removeFromFavorites(event: FavoriteEvent) {
         viewModel.deleteFavorite(event)
     }
@@ -70,6 +95,11 @@ class FavoriteEventFragment : Fragment() {
     private fun filterEvents(query: String?) {
         val filteredList = if (query.isNullOrEmpty()) {
             allEvents
+=======
+    private fun filterEvents(query: String?) {
+        val filteredList = if (query.isNullOrEmpty()) {
+            allEvents // Show all events if query is empty
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
         } else {
             allEvents.filter {
                 it.title.contains(query, ignoreCase = true) ||
@@ -80,11 +110,14 @@ class FavoriteEventFragment : Fragment() {
     }
 
     private fun navigateToDetail(event: FavoriteEvent) {
+<<<<<<< HEAD
         if (event.title.isNullOrEmpty() || event.description.isNullOrEmpty()) {
             Log.e("FavoriteEventFragment", "Event data kosong, tidak bisa navigasi")
             return
         }
 
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
         val detailEvent = DetailFavoriteEvent(
             id = event.id.toString(),
             title = event.title,

@@ -57,6 +57,7 @@
             android:text="👥 Kuota Event"
             android:textColor="#666666"
             android:paddingTop="4dp" />
+<<<<<<< HEAD
 
         <ImageView
             android:id="@+id/ivFavorite"
@@ -71,6 +72,8 @@
             android:focusable="true"
             app:tint="@color/red"
             android:layout_gravity="end"/>
+=======
+>>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
