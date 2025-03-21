@@ -8,7 +8,6 @@
     tools:context=".ui.finished.FinishedEventFragment"
     android:padding="16dp">
 
-    <!-- SearchView untuk mencari event -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="0dp"
@@ -20,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- RecyclerView untuk menampilkan event -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFinishedEvents"
         android:layout_width="0dp"

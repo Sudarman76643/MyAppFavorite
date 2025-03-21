@@ -2,10 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
-<<<<<<< HEAD
     id("kotlin-parcelize")
-=======
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
+
     id("androidx.navigation.safeargs.kotlin") version "2.8.8"
 }
 
@@ -79,6 +77,10 @@ dependencies {
 
     // DataStore untuk penyimpanan preferensi
     implementation(libs.androidx.datastore.preferences)
+
+    implementation ("androidx.work:work-runtime-ktx:2.10.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
+
 
     // Test dependencies
     testImplementation(libs.junit)

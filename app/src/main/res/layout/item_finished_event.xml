@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="6dp">
+        android:padding="6dp"
+        android:background="@color/primaryColor">
 
         <ImageView
             android:id="@+id/ivEventImage"
@@ -57,23 +59,19 @@
             android:text="👥 Kuota Event"
             android:textColor="#666666"
             android:paddingTop="4dp" />
-<<<<<<< HEAD
 
         <ImageView
             android:id="@+id/ivFavorite"
             android:layout_width="19dp"
             android:layout_height="19dp"
             android:src="@drawable/love"
-            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-
             android:clickable="true"
             android:focusable="true"
-            app:tint="@color/red"
-            android:layout_gravity="end"/>
-=======
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
+            app:tint="@color/red"/>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

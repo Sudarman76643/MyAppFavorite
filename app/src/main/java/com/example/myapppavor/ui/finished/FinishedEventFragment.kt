@@ -1,5 +1,6 @@
 package com.example.myapppavor.ui.finished
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapppavor.databinding.FragmentFinishedEventBinding
+import com.example.myapppavor.remote.response.ListEventsItem
 import com.example.myapppavor.ui.adapter.FinishedEventAdapter
+import com.example.myapppavor.ui.detailEvent.DetailEventFragment
 
 class FinishedEventFragment : Fragment() {
-<<<<<<< HEAD
-=======
-
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
     private var _binding: FragmentFinishedEventBinding? = null
     private val binding get() = _binding!!
     private val viewModel: FinishedEventViewModel by viewModels()
@@ -33,26 +32,29 @@ class FinishedEventFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-<<<<<<< HEAD
         adapter = FinishedEventAdapter(
             onItemClick = { event ->
-                Toast.makeText(requireContext(), "Clicked: ${event.name}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Clicked: ${event.name}", Toast.LENGTH_SHORT)
+                    .show()
             },
             onFavoriteClick = { event, isFavorite ->
                 if (isFavorite) {
                     viewModel.addToFavorites(event)
-                    Toast.makeText(requireContext(), "${event.name} ditambahkan ke favorit", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "${event.name} ditambahkan ke favorit",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 } else {
                     viewModel.removeFromFavorites(event)
-                    Toast.makeText(requireContext(), "${event.name} dihapus dari favorit", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "${event.name} dihapus dari favorit",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         )
-=======
-        adapter = FinishedEventAdapter { event ->
-            Toast.makeText(requireContext(), "Clicked: ${event.name}", Toast.LENGTH_SHORT).show()
-        }
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 
         binding.rvFinishedEvents.layoutManager = LinearLayoutManager(requireContext())
         binding.rvFinishedEvents.adapter = adapter
@@ -82,4 +84,5 @@ class FinishedEventFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

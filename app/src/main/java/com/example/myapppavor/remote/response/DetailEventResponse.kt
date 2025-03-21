@@ -13,10 +13,7 @@ data class DetailEventResponse(
 	@field:SerializedName("event")
 	val event: EventDetail?
 )
-<<<<<<< HEAD
-=======
 
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
 data class EventDetail(
 
 	@field:SerializedName("id")

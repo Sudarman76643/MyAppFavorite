@@ -15,7 +15,7 @@ class DetailEventViewModel : ViewModel() {
             id = eventId,
             title = "Sample Event",
             description = "This is a sample event description.",
-            imageUrl = "https://example.com/sample.jpg",
+            imageUrl = "https://event-api.dicoding.dev/",
             date = "10 March 2025"
         )
         return detailEvent

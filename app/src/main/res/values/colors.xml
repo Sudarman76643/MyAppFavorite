@@ -7,10 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#54A4F0</color>
+    <color name="blue">#237ED3</color>
     <color name="gray">#D5D5D5</color>
-<<<<<<< HEAD
     <color name="red">#FF0000</color>
-=======
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
+    <color name="primaryColor">#D1E3FA</color>
+    <color name="selectedColor">#FF5722</color>
+    <color name="abu">#BDBDBD</color>
+
+
 </resources>

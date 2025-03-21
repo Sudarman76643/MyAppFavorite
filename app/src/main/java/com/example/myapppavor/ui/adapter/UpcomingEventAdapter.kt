@@ -33,11 +33,10 @@ class UpcomingEventAdapter(
 
         fun bind(event: ListEventsItem) {
             imgEventCover.load(event.mediaCover) {
-<<<<<<< HEAD
                 placeholder(R.drawable.event1)
-=======
+
                 placeholder(R.drawable.warning)
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
+
                 error(R.drawable.warning)
             }
 
@@ -60,10 +59,6 @@ class UpcomingEventAdapter(
                 onRegisterClick(event)
             }
 
-<<<<<<< HEAD
-=======
-            // Atur klik pada imgLove
->>>>>>> 4598020fff13130edf8069f290fc078f9f32ce1f
             imgLove.setOnClickListener {
                 val isFavorite = it.tag as? Boolean ?: false
 
