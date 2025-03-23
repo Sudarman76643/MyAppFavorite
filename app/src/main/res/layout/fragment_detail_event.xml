@@ -4,85 +4,150 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:background="@android:color/white"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="41dp"
-            android:layout_height="41dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_back"
-            android:contentDescription="Kembali"
-            android:layout_marginBottom="12dp"/>
-
-        <ImageView
-            android:id="@+id/ivEventImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="Event Image"
-            android:background="@android:color/darker_gray"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:id="@+id/tvEventTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nama Event"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:contentDescription="Back"
+            android:layout_gravity="start"
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tvEventDescription"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Deskripsi event akan muncul di sini..."
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"
-            android:paddingTop="8dp"
-            android:layout_marginBottom="12dp"/>
+            android:text="Deskripsi Event"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
 
-        <!-- Lokasi dan Tanggal Event -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:layout_marginBottom="16dp">
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivEventImage"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Event Image"
+                android:background="@drawable/rounded_corner"
+                android:layout_marginBottom="16dp"/>
 
             <TextView
-                android:id="@+id/tvEventLocation"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvEventTitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="📍 Lokasi Event"
-                android:textSize="14sp"
+                android:text="Nama Event"
+                android:textSize="22sp"
+                android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:gravity="center"/>
 
-            <TextView
-                android:id="@+id/tvEventDate"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" | 🕒 12 Maret 2025, 10:00 WIB"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"/>
+                android:padding="12dp"
+                android:background="@drawable/rounded_box"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tvEventDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi event akan muncul di sini..."
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/rounded_box"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/location"
+                        android:layout_marginEnd="4dp"
+                        app:tint="@android:color/holo_blue_dark" />
+
+                    <TextView
+                        android:id="@+id/tvEventLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokasi Event"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginVertical="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/timer"
+                        android:layout_marginEnd="4dp"
+                        app:tint="@android:color/holo_blue_dark" />
+
+                    <TextView
+                        android:id="@+id/tvEventDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12 Maret 2025, 10:00 WIB"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnJoinEvent"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Ikut Event"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_500"
+                android:textColor="@android:color/white"
+                android:background="@drawable/rounded_button"/>
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnJoinEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ikut Event"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/purple_500"
-            android:textColor="@android:color/white"/>
-
     </LinearLayout>
 </ScrollView>

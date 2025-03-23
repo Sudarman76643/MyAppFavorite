@@ -1,6 +1,7 @@
 package com.example.myapppavor.ui.detailEvent
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,8 @@ class DetailEventFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.d("DetailEventFragment", "Image URL: ${args.imageUrl}")
+
         binding.tvEventTitle.text = args.title
         binding.tvEventDescription.text = HtmlCompat.fromHtml(args.description, HtmlCompat.FROM_HTML_MODE_LEGACY)
         binding.tvEventLocation.text = if (args.location.startsWith("http")) {
@@ -38,15 +41,26 @@ class DetailEventFragment : Fragment() {
         }
         binding.tvEventDate.text = "🕒 ${args.date}"
 
+        val imageUrl = if (args.imageUrl.isNullOrEmpty()) {
+            "https://event-api.dicoding.dev/"
+        } else {
+            args.imageUrl
+        }
+
         Glide.with(this)
-            .load(args.imageUrl)
+            .load(imageUrl)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .override(100, 100)
             .placeholder(R.drawable.event1)
             .error(R.drawable.warning)
+            .fitCenter()
             .into(binding.ivEventImage)
 
+        binding.btnJoinEvent.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         binding.btnBack.setOnClickListener {
+            Log.d("DetailEventFragment", "Tombol back ditekan")
             findNavController().navigateUp()
         }
     }

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Cover Event -->
+
         <ImageView
             android:id="@+id/imgEventCover"
             android:layout_width="match_parent"
